@@ -1,19 +1,37 @@
+import argparse
 from scripts import clone, commit, push
 
 if __name__ == "__main__":
-    cloning = input("Are you cloning a git repo? (Y/N): ").lower()
-    if cloning == "y":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--clone",
+        type=bool,
+        default=False
+    )
+    parser.add_argument(
+        "--git-url",
+        type=str,
+        default="https://github.com/iwparry/gitpython.git"
+    )
+    parser.add_argument(
+        "--git-dir",
+        type=str,
+        default="./gitpython"
+    )
+    parser.add_argument(
+        "--message",
+        type=str,
+        required=True
+    )
+    args = parser.parse_args()
+
+    if args.clone:
         print(f"Cloning repository")
-        clone.run()
+        clone.run(url=args.git_url, dir=args.git_dir)
     else:
         print(f"Skipping clone")
 
-    msg = input("Enter commit message: ").strip()
-    if not msg:
-        print("Commit message cannot be empty.")
-        exit(1)
-
-    commit.run(message=msg)
+    commit.run(message=args.message)
     push.run()
 
     print(f"Workflow ran successfully")
