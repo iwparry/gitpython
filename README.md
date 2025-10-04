@@ -36,3 +36,16 @@ __Everything from line 15 onwards in this file has been written locally, the fol
 I have successfully pushed to `main` using the scripts saved in `scripts/`, `commit.py` and `push.py`
 
 __FIX: The original script `push.py` that was committed was missing `()` - fixing in latest commit to `main`__
+
+Since I've edited this script last I've written up a `main.py` script that executes all the modular scripts in the `scrips/` directory, no now I have a single script to handle the workflow `clone -> commit -> push` and have included user prompts for whether we want to clone a repo and to provide a commit message. 
+
+Example:
+```
+$ gitpython/main.py
+Are you cloning a git repo? (Y/N): Y
+Cloning repository
+Repository already exists at 'gitpython', skipping clone.
+Enter commit message: Updating README.md
+Workflow ran successfully
+```
+Will be utilising `argparse` to run the script with flags rather than needing to prompt the user for values.
