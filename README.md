@@ -79,4 +79,7 @@ Have now added the following argparse arguments to the script with the only requ
 So now I simply run:
 ```
 python gitpython/main.py --clone True --message "Update README.md with argparse entries"
+Cloning repository
+Repository already exists at './gitpython', skipping clone.
+Workflow ran successfully
 ```
