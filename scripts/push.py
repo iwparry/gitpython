@@ -6,7 +6,7 @@ def git_push(origin):
 
 def run(path="./gitpython", origin="origin"):
     repo = Repo(path)
-    repo_origin = repo.remote(name=repo_origin)
+    repo_origin = repo.remote(name=origin)
     git_push(repo_origin)
     return f"Successfully pushed changes to {repo}"
     
