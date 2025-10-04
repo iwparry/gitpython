@@ -49,3 +49,34 @@ Enter commit message: Updating README.md
 Workflow ran successfully
 ```
 Will be utilising `argparse` to run the script with flags rather than needing to prompt the user for values.
+
+Have now added the following argparse arguments to the script with the only required argument being `--message`
+
+```
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--clone",
+        type=bool,
+        default=False
+    )
+    parser.add_argument(
+        "--git-url",
+        type=str,
+        default="https://github.com/iwparry/gitpython.git"
+    )
+    parser.add_argument(
+        "--git-dir",
+        type=str,
+        default="./gitpython"
+    )
+    parser.add_argument(
+        "--message",
+        type=str,
+        required=True
+    )
+    args = parser.parse_args()
+```
+So now I simply run:
+```
+python gitpython/main.py --clone True --message "Update README.md with argparse entries"
+```
