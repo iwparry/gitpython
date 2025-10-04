@@ -10,7 +10,8 @@ def git_commit(repo, msg):
 
 if __name__ == "__main__":
     git_repo = Repo("./gitpython")
-    message = "First commit via GitPython"
+    # message = "First commit via GitPython"
+    message = "Fix push.py script - missin () for origin.push()"
 
     git_add(git_repo)
     git_commit(git_repo, message)

@@ -33,4 +33,6 @@ Inside my function I created a variable `clone` and assigned to this variable is
 
 __Everything from line 15 onwards in this file has been written locally, the following will demonstrate how to we add, commit, and push changes to our remote git repository.__
 
-I have successfully pushed to main using the scripts saved in `scripts/`, `commit.py` and `push.py`
+I have successfully pushed to `main` using the scripts saved in `scripts/`, `commit.py` and `push.py`
+
+__FIX: The original script `push.py` that was committed was missing `()` - fixing in latest commit to `main`

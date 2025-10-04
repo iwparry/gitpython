@@ -1,7 +1,7 @@
 from git import Repo
 
 def git_push(origin):
-    push = origin.push
+    push = origin.push()
     return push
 
 if __name__ == "__main__":
