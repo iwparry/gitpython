@@ -1,8 +1,8 @@
 from scripts import clone, commit, push
 
 if __name__ == "__main__":
-    clone = input("Are you cloning a git repo? (Y/N): ").lower()
-    if clone == "y":
+    cloning = input("Are you cloning a git repo? (Y/N): ").lower()
+    if cloning == "y":
         print(f"Cloning repository")
         clone.run()
     else:
