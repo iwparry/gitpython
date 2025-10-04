@@ -13,7 +13,7 @@ def run(path="./gitpython", message="GitPython commit"):
     repo = Repo(path)
     git_add(repo)
     git_commit(repo, message)
-    return f"✅ Change successfully committed, commit message: {message}"
+    return f"Change successfully committed, commit message: {message}"
 
 if __name__ == "__main__":
     run()
