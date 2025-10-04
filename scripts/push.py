@@ -4,10 +4,12 @@ def git_push(origin):
     push = origin.push()
     return push
 
+def run(path="./gitpython", origin="origin"):
+    repo = Repo(path)
+    repo_origin = repo.remote(name=repo_origin)
+    git_push(repo_origin)
+    return f"Successfully pushed changes to {repo}"
+    
+
 if __name__ == "__main__":
-    git_repo = Repo("./gitpython")
-    git_origin = git_repo.remote(name="origin")
-
-    git_push(git_origin)
-
-    print(f"Successfully pushed changes to {git_repo}.")
+    run()

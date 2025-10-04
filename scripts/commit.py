@@ -8,12 +8,12 @@ def git_commit(repo, msg):
     commit = repo.index.commit(msg) # git commit -m "msg"
     return commit
 
+def run(path="./gitpython", message="GitPython commit"):
+    """Add + commit changes for a given repo path."""
+    repo = Repo(path)
+    git_add(repo)
+    git_commit(repo, message)
+    return f"✅ Change successfully committed, commit message: {message}"
+
 if __name__ == "__main__":
-    git_repo = Repo("./gitpython")
-    # message = "First commit via GitPython"
-    message = "Fix push.py script - missin () for origin.push()"
-
-    git_add(git_repo)
-    git_commit(git_repo, message)
-
-    print(f"Change successfully committed, commit message: {message}")
+    run()
