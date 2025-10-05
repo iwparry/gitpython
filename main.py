@@ -1,5 +1,5 @@
 import argparse
-from scripts import clone, commit, push, branch
+from scripts import clone, commit, push, branch, merge
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -28,6 +28,16 @@ if __name__ == "__main__":
         type=str,
         default="main"
     )
+    parser.add_argument(
+        "--merge",
+        type=bool,
+        default=False
+    )
+    parser.add_argument(
+        "--source",
+        type=str,
+        default="main"
+    )
     args = parser.parse_args()
 
     if args.clone:
@@ -35,11 +45,18 @@ if __name__ == "__main__":
         clone.run(url=args.git_url, dir=args.git_dir)
     else:
         print(f"Skipping clone")
-
+    
     if args.branch:
         print(f"Branch argument provided - running branch workflow")
         branch.run(branch=args.branch)
+
+    if args.merge:
+        print(f"merge argument provided - merging {args.source} to current")
+        print(f"Fist, commit unsaved changes")
         commit.run(message=args.message)
-        push.run(branch=args.branch)
+        merge.run(source=args.source)
+    
+    commit.run(message=args.message)
+    push.run(branch=args.branch)
 
     print(f"Workflow ran successfully")
