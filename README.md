@@ -56,3 +56,5 @@ I've now written `branch.py` to introduce a branch workflow that concerns creati
 __Issue on `new_branch_2`: This branch was created without the branch workflow present in `main` and `new_branch` although I could have fixed via CLI which would have been quicker I created new script `merge.py` that will merge the branches I hve locally__
 
 Firstly I needed to commit unsaved changes, so the first commit to be pushed will not include the changes pulled from `new_branch`.
+
+__ADMISSION: I did run into some issues due to some merge conflicts so I did have to run through some steps manually which included the final push to `new_branch_2` - if anyone follows this workflow ensure that your scripts are better equipped to deal with this issue__

@@ -45,16 +45,18 @@ if __name__ == "__main__":
         clone.run(url=args.git_url, dir=args.git_dir)
     else:
         print(f"Skipping clone")
+
     if args.merge:
         print(f"merge argument provided - merging {args.source} to current")
-        print(f"Fist, commit and push unsaved changes")
+        print(f"Fist, commit unsaved changes")
         commit.run(message=args.message)
         merge.run(source=args.source)
         
     if args.branch:
         print(f"Branch argument provided - running branch workflow")
         branch.run(branch=args.branch)
-        commit.run(message=args.message)
-        push.run(branch=args.branch)
+    
+    commit.run(message=args.message)
+    push.run(branch=args.branch)
 
     print(f"Workflow ran successfully")
