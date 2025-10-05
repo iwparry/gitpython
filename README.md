@@ -52,3 +52,7 @@ Workflow ran successfully
 ```
 
 I've now written `branch.py` to introduce a branch workflow that concerns creating and changing between branches. I will be pushing these changes first to my new branches (`new_branch` and `new_branch_2`) and then merging the finalised scripts to `main`, for this I will explore merging via GitPython.
+
+__Issue on `new_branch_2`: This branch was created without the branch workflow present in `main` and `new_branch` although I could have fixed via CLI which would have been quicker I created new script `merge.py` that will merge the branches I hve locally__
+
+Firstly I needed to commit unsaved changes, so the first commit to be pushed will not include the changes pulled from `new_branch`.
